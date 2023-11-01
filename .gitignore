@@ -33,4 +33,4 @@
 
 # VS files
 .vs
-/build/
+/App/out/build/
