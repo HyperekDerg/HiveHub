@@ -1,4 +1,4 @@
-﻿// App.h: Header file included for standard system header files
+﻿// main.h: Header file included for standard system header files
 // or project-specific header files.
 
 #pragma once

@@ -1,5 +1,15 @@
 # ninja log v5
-4	1110	7204412687215197	App/CMakeFiles/App.dir/App.cpp.obj	c14c585219aec285
-1111	1307	7204412688743547	App/App.exe	38b065cf1cccdcde
-13	1365	7204734601283776	App/CMakeFiles/App.dir/App.cpp.obj	c14c585219aec285
-1365	1665	7204734603799711	App/App.exe	38b065cf1cccdcde
+1458	1693	7205470573209408	App/App.exe	581da693b2cc73f8
+4	1457	7205470571460091	App/CMakeFiles/App.dir/main.cpp.obj	8324b69ffac429b9
+4	1140	7205475930296852	App/CMakeFiles/App.dir/main.cpp.obj	8324b69ffac429b9
+10	1146	7205475930428979	App/CMakeFiles/App.dir/user_interface.cpp.obj	1bcd2ec71db2636e
+1147	1463	7205475933120862	App/App.exe	6775270b1126bf4e
+16	1242	7205478549528664	App/CMakeFiles/App.dir/main.cpp.obj	8324b69ffac429b9
+22	1251	7205478549528664	App/CMakeFiles/App.dir/user_interface.cpp.obj	1bcd2ec71db2636e
+1251	1456	7205478551328721	App/App.exe	6775270b1126bf4e
+3	1040	7205480082125653	App/CMakeFiles/App.dir/main.cpp.obj	8324b69ffac429b9
+8	1051	7205480082125653	App/CMakeFiles/App.dir/user_interface.cpp.obj	1bcd2ec71db2636e
+1051	1255	7205480083819338	App/App.exe	6775270b1126bf4e
+24	1271	7205482037508656	App/CMakeFiles/App.dir/main.cpp.obj	8324b69ffac429b9
+30	1277	7205482037665049	App/CMakeFiles/App.dir/user_interface.cpp.obj	1bcd2ec71db2636e
+1278	1519	7205482039566588	App/App.exe	6775270b1126bf4e

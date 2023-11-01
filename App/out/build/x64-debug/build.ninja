@@ -77,7 +77,14 @@ build rebuild_cache: phony CMakeFiles\rebuild_cache.util
 
 build cmake_object_order_depends_target_App: phony || App\CMakeFiles\App.dir
 
-build App\CMakeFiles\App.dir\App.cpp.obj: CXX_COMPILER__App_unscanned_Debug C$:\Users\hyper\Desktop\HiveHub\App\App\App.cpp || cmake_object_order_depends_target_App
+build App\CMakeFiles\App.dir\main.cpp.obj: CXX_COMPILER__App_unscanned_Debug C$:\Users\hyper\Desktop\HiveHub\App\App\main.cpp || cmake_object_order_depends_target_App
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Ob0 /Od /RTC1 -std:c++20 -ZI
+  OBJECT_DIR = App\CMakeFiles\App.dir
+  OBJECT_FILE_DIR = App\CMakeFiles\App.dir
+  TARGET_COMPILE_PDB = App\CMakeFiles\App.dir\
+  TARGET_PDB = App\App.pdb
+
+build App\CMakeFiles\App.dir\user_interface.cpp.obj: CXX_COMPILER__App_unscanned_Debug C$:\Users\hyper\Desktop\HiveHub\App\App\user_interface.cpp || cmake_object_order_depends_target_App
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Ob0 /Od /RTC1 -std:c++20 -ZI
   OBJECT_DIR = App\CMakeFiles\App.dir
   OBJECT_FILE_DIR = App\CMakeFiles\App.dir
@@ -92,7 +99,7 @@ build App\CMakeFiles\App.dir\App.cpp.obj: CXX_COMPILER__App_unscanned_Debug C$:\
 #############################################
 # Link the executable App\App.exe
 
-build App\App.exe: CXX_EXECUTABLE_LINKER__App_Debug App\CMakeFiles\App.dir\App.cpp.obj
+build App\App.exe: CXX_EXECUTABLE_LINKER__App_Debug App\CMakeFiles\App.dir\main.cpp.obj App\CMakeFiles\App.dir\user_interface.cpp.obj
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Ob0 /Od /RTC1 -ZI
   LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
   LINK_LIBRARIES = kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
