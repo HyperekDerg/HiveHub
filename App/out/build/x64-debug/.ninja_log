@@ -1,8 +1,0 @@
-# ninja log v5
-14	1267	7205499738951621	App/CMakeFiles/App.dir/main.cpp.obj	8324b69ffac429b9
-1317	1570	7205499741505875	App/App.exe	6775270b1126bf4e
-21	1307	7205499739328243	App/CMakeFiles/App.dir/user_interface.cpp.obj	1bcd2ec71db2636e
-20	250	7205685236456070	build.ninja	51fa0308f8d0664a
-29	1226	7205685249579277	App/CMakeFiles/App.dir/user_interface.cpp.obj	1bcd2ec71db2636e
-24	1236	7205685249752055	App/CMakeFiles/App.dir/main.cpp.obj	8324b69ffac429b9
-1236	1475	7205685251700268	App/App.exe	6775270b1126bf4e
