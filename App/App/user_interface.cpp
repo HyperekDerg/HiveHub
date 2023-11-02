@@ -8,12 +8,12 @@ UserInterface::UserInterface(const string& title) : title(title) {
 
 void UserInterface::display() const {
     cout << "=== " << title << " ===" << endl;
-    cout << "1. Option 1" << endl;
-    cout << "2. Option 2" << endl;
-    cout << "3. Option 3" << endl;
-    cout << "4. Option 4" << endl;
-    cout << "5. Option 5" << endl;
-    cout << "6. Exit" << endl;
+    cout << "1. Add New Person" << endl;
+    cout << "2. Edit Data" << endl;
+    cout << "3. Manage Interests" << endl;
+    cout << "4. Group People" << endl;
+    cout << "5. Import/Export Data" << endl;
+    cout << "6. End Task [EXIT]" << endl;
 }
 
 int UserInterface::getUserChoice() const {
