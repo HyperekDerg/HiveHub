@@ -1,6 +1,6 @@
 #include "user_interface.h"
 
-using namespace std; // Allows using the std namespace without the "std::" prefix
+using namespace std;
 
 UserInterface::UserInterface(const string& title) : title(title) {
     // Constructor initializes the menu object with the given title

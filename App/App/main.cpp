@@ -17,5 +17,6 @@ int main()
         userInterface.display(); // Displays the menu
         userInterface.runUserChoice(); // Handles user's choice
     }
+
     return 0;
 }
