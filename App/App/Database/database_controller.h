@@ -33,4 +33,14 @@ private:
 	std::map<std::string, UserData> userMap;
 };
 
+class ReadDatabase {
+public:
+	ReadDatabase(const WriteDatabase& writeDatabase);
+	void displayUser(const UserData& userData);
+	bool findUserByEmail(const std::string& email);
+	bool findUsersByInterests(const std::vector<std::string>& interests);
+private:
+	const WriteDatabase& writeDatabase_;
+};
+
 #endif
