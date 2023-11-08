@@ -1,10 +1,7 @@
 #include "user_interface.h"
 
-using namespace std;
-
-UserInterface::UserInterface(const string& title) : title(title) {
-    // Constructor initializes the menu object with the given title
-}
+UserInterface::UserInterface(const string& title, WriteDatabase& writeDatabase)
+    : title(title), writeDatabase(writeDatabase) {}
 
 void UserInterface::display() const {
     cout << "=== " << title << " ===" << endl;
@@ -27,7 +24,7 @@ void UserInterface::runUserChoice() const {
     int choice = getUserChoice();
     switch (choice) {
     case 1:
-        // Call the subroutine for Option 1
+        userCreator(writeDatabase);
         break;
     case 2:
         // Call the subroutine for Option 2

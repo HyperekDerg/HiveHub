@@ -1,9 +1,4 @@
 #include "database_controller.h"
-#include "line_parser.h"
-#include <iostream>
-#include <algorithm>
-
-using namespace std;
 
 ReadDatabase::ReadDatabase(const WriteDatabase& writeDatabase) : writeDatabase_(writeDatabase) {}
 
@@ -23,14 +18,7 @@ bool ReadDatabase::findUserByEmail(const string& email) {
 	const map<string, UserData>& userMap = writeDatabase_.getUserMap();
 	auto it = userMap.find(email);
 
-	if (it != userMap.end()) {
-		displayUser(it->second);
-		return true;
-	}
-	else {
-		cout << "User with email " << email << " not found in the database." << endl;
-		return false;
-	}
+	return it != userMap.end();
 }
 
 bool ReadDatabase::findUsersByInterests(const vector<string>& interests) {
