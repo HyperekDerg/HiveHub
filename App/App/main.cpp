@@ -1,21 +1,24 @@
 ﻿// main.cpp: Defines the entry point for the application.
-//
 
 #include "main.h"
-#include "user_interface.h"
 
-using namespace std;
-
-int main()
-{
+int main() {
     cout << "Hello HiveHub" << endl;
 
-    UserInterface userInterface("Main Menu");  // Creates an object of the UserInterface class
-    bool exitProgram = false;
+    WriteDatabase database("database.txt");
 
-    while (!exitProgram) {
-        userInterface.display(); // Displays the menu
-        userInterface.runUserChoice(); // Handles user's choice
+    if (database.load()) {
+        UserInterface userInterface("Main Menu", database);
+
+        bool exitProgram = false;
+
+        while (!exitProgram) {
+            userInterface.display();
+            userInterface.runUserChoice();
+        }
+    }
+    else {
+        cout << "Failed to load the database." << endl;
     }
 
     return 0;

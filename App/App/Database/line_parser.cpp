@@ -1,8 +1,4 @@
 #include "line_parser.h"
-#include "database_controller.h"
-#include <sstream>
-
-using namespace std;
 
 bool LineParser::parseLine(const string& line, UserData& userData) {
 	istringstream iss(line);

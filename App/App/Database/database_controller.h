@@ -1,44 +1,52 @@
 #ifndef DATABASE_CONTROLLER_H
 #define DATABASE_CONTROLLER_H
 
+#include <iostream>
 #include <string>
 #include <vector>
 #include <map>
+#include <fstream>
+#include <sstream>
+#include <algorithm>
+#include <cctype>
+#include "line_parser.h"
+
+using namespace std;
 
 struct UserData
 {
-	std::string email;
-	std::string firstName;
-	std::string lastName;
-	std::string address;
-	std::vector<std::string> interests;
+	string email;
+	string firstName;
+	string lastName;
+	string address;
+	vector<string> interests;
 };
 
 class WriteDatabase {
 public:
-	WriteDatabase(const std::string& filename);
+	WriteDatabase(const string& filename);
 	~WriteDatabase();
 
-	void addUser(const std::string& email, const std::string& firstName, const std::string& lastName, const std::string& address, const std::vector<std::string>& interests);
-	bool removeUser(const std::string& email);
+	void addUser(const string& email, const string& firstName, const string& lastName, const string& address, const vector<string>& interests);
+	bool removeUser(const string& email);
 
 	bool load();
 	bool save();
-	const std::map<std::string, UserData>& getUserMap() const {
+	const map<string, UserData>& getUserMap() const {
 		return userMap;
 	}
 
 private:
-	std::string filename_;
-	std::map<std::string, UserData> userMap;
+	string filename_;
+	map<string, UserData> userMap;
 };
 
 class ReadDatabase {
 public:
 	ReadDatabase(const WriteDatabase& writeDatabase);
 	void displayUser(const UserData& userData);
-	bool findUserByEmail(const std::string& email);
-	bool findUsersByInterests(const std::vector<std::string>& interests);
+	bool findUserByEmail(const string& email);
+	bool findUsersByInterests(const vector<string>& interests);
 private:
 	const WriteDatabase& writeDatabase_;
 };

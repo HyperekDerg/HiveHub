@@ -1,11 +1,4 @@
 #include "database_controller.h"
-#include "line_parser.h"
-#include <fstream>
-#include <sstream>
-#include <algorithm>
-#include <cctype>
-
-using namespace std;
 
 WriteDatabase::WriteDatabase(const string& filename) : filename_(filename) {
 	load();
@@ -80,8 +73,3 @@ bool WriteDatabase::save() {
 	file.close();
 	return true;
 }
-
-
-
-
-

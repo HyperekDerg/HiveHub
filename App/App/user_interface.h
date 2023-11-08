@@ -4,16 +4,21 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include "Database/database_controller.h"
+#include "Methods/add_person.h"
+
+using namespace std;
 
 class UserInterface {
 public:
-    UserInterface(const std::string& title);
+    UserInterface(const string& title, WriteDatabase& writeDatabase);
     void display() const;
     int getUserChoice() const;
     void runUserChoice() const;
 
 private:
-    std::string title;
+    string title;
+    WriteDatabase& writeDatabase;
 };
 
-#endif // USER_INTERFACE_H
+#endif
