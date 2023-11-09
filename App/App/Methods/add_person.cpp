@@ -35,6 +35,5 @@ void userCreator(WriteDatabase& writeDatabase) {
     else {
         writeDatabase.addUser(email, firstName, lastName, address, interests);
         cout << "User added to the database successfully." << endl;
-        cout << "Interests: ";
     }
 }
