@@ -9,16 +9,17 @@ void userCreator(WriteDatabase& writeDatabase) {
 
     cout << "Enter Email: ";
     cin >> email;
+    cin.ignore();
     cout << "Enter First Name: ";
     cin >> firstName;
+    cin.ignore();
     cout << "Enter Last Name: ";
     cin >> lastName;
-    cout << "Enter Address: ";
     cin.ignore();
+    cout << "Enter Address: ";
     getline(cin, address);
 
     cout << "Enter Interests (comma-separated): ";
-    cin.ignore();
     getline(cin, interestInput);
 
     istringstream iss(interestInput);
@@ -34,5 +35,6 @@ void userCreator(WriteDatabase& writeDatabase) {
     else {
         writeDatabase.addUser(email, firstName, lastName, address, interests);
         cout << "User added to the database successfully." << endl;
+        cout << "Interests: ";
     }
 }
