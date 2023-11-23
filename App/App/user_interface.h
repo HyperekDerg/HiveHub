@@ -4,8 +4,10 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <stdlib.h>
 #include "Database/database_controller.h"
 #include "Methods/add_person.h"
+#include "Methods/edit_tool.h"
 
 using namespace std;
 

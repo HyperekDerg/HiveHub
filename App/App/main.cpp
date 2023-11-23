@@ -3,8 +3,6 @@
 #include "main.h"
 
 int main() {
-    cout << "Hello HiveHub" << endl;
-
     WriteDatabase database("database.txt");
 
     if (database.load()) {

@@ -4,6 +4,7 @@ UserInterface::UserInterface(const string& title, WriteDatabase& writeDatabase)
     : title(title), writeDatabase(writeDatabase) {}
 
 void UserInterface::display() const {
+    cout << "[MAIN]" << endl << endl;
     cout << "=== " << title << " ===" << endl;
     cout << "1. Add New Person" << endl;
     cout << "2. Edit Data" << endl;
@@ -24,10 +25,16 @@ void UserInterface::runUserChoice() const {
     int choice = getUserChoice();
     switch (choice) {
     case 1:
+        system("CLS");
         userCreator(writeDatabase);
+        system("CLS");
         break;
     case 2:
-        // Call the subroutine for Option 2
+        system("CLS");
+        EditTool editTool;
+        editTool.menu();
+        editTool.runUserChoice();
+        system("CLS");
         break;
     case 3:
         // Call the subroutine for Option 3

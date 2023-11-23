@@ -1,15 +1,19 @@
-#ifndef ADD_PERSON_H
-#define ADD_PERSON_H
+#ifndef EDIT_TOOL_H
+#define EDIT_TOOL_H
 
 #include <iostream>
 #include <vector>
 #include <string>
 #include <sstream>
-#include <stdlib.h>
 #include "../Database/database_controller.h"
 
 using namespace std;
 
-void userCreator(WriteDatabase& writeDatabase);
-
+class EditTool
+{
+public:
+	void menu() const;
+	int getUserChoice() const;
+	void runUserChoice() const;
+};
 #endif
