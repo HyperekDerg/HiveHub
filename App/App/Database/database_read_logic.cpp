@@ -24,19 +24,25 @@ bool ReadDatabase::findUserByEmail(const string& email) {
 bool ReadDatabase::findUsersByInterests(const vector<string>& interests) {
 	const map<string, UserData>& userMap = writeDatabase_.getUserMap();
 	bool found = false;
-	LineParser lineParser;
 
 	for (const auto& pair : userMap) {
 		const UserData& userData = pair.second;
 
 		bool hasInterests = true;
 
-		// Check if the interests provided by the user are a subset of the user's interests
-		for (const string& interest : interests) {
-			if (find(userData.interests.begin(), userData.interests.end(), interest) == userData.interests.end()) {
-				hasInterests = false;
-				break;
+		UserData parsedUserData;
+		if (LineParser::parseLine(userData.email + "," + userData.firstName + "," +
+			userData.lastName + "," + userData.address, parsedUserData)) {
+			for (const string& interest : interests) {
+				if (find(parsedUserData.interests.begin(), parsedUserData.interests.end(), interest) ==
+					parsedUserData.interests.end()) {
+					hasInterests = false;
+					break;
+				}
 			}
+		}
+		else {
+			cerr << "Error parsing user data for email: " << userData.email << endl;
 		}
 
 		if (hasInterests) {

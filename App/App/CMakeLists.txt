@@ -1,12 +1,22 @@
-﻿# CMakeList.txt: CMake project for the App component, include source and define
-# project-specific logic here.
-#
+﻿# CMake project for the App component
+# Include source and define project-specific logic here.
+
+cmake_minimum_required(VERSION 3.12)
+
+project(App)
+
+# Set C++ standard
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Add source to the executable file of this project.
-add_executable (App "main.cpp" "main.h" "user_interface.h" "user_interface.cpp" "Methods/add_person.cpp" "Methods/edit_tool.cpp" "Methods/add_person.h" "Methods/edit_tool.h" "Methods/manage_interests.cpp" "Methods/manage_interests.h" "Methods/group_people.h" "Methods/group_people.cpp" "Methods/import_export.cpp" "Methods/import_export.h" "Database/database_controller.h" "Database/database_save_logic.cpp" "Database/line_parser.h" "Database/line_parser.cpp" "Database/database_read_logic.cpp")
+file(GLOB SOURCES "main.cpp" "user_interface.cpp" "Methods/*.cpp" "Database/*.cpp" "Methods/Edits_Methods/*.cpp")
+file(GLOB HEADERS "*.h" "Methods/*.h" "Database/*.h" "Methods/Edits_Methods/*.h")
 
-if (CMAKE_VERSION VERSION_GREATER 3.12)
-  set_property(TARGET App PROPERTY CXX_STANDARD 20)
-endif()
+add_executable(App ${SOURCES} ${HEADERS})
 
-# TODO: Add tests and install targets if needed.
+# Include directories
+target_include_directories(App PRIVATE Methods Database)
+
+# Set compiler features
+target_compile_features(App PRIVATE cxx_std_20)
