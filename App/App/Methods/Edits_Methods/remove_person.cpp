@@ -1,4 +1,4 @@
-#include "remove_person.h"
+#include "edit_methods.h"
 
 void userRemove(WriteDatabase& writeDatabase) {
 	cout << "[MAIN|EDIT|REMOVE]" << endl << endl;
@@ -13,20 +13,20 @@ void userRemove(WriteDatabase& writeDatabase) {
 	ReadDatabase readDatabase(writeDatabase);
 	if (readDatabase.findUserByEmail(email)) {
 		if (writeDatabase.removeUser(email)) {
-			cout << "####################" << endl;
+			cout << endl << "####################" << endl;
 			cout << "User removed successfully." << endl;
 			cout << "####################" << endl;
 			system("PAUSE");
 		}
 		else {
-			cout << "####################" << endl;
+			cout << endl << "####################" << endl;
 			cout << "Failed to remove user. Unexpected error occurred." << endl;
 			cout << "####################" << endl;
 			system("PAUSE");
 		}
 	}
 	else {
-		cout << "####################" << endl;
+		cout << endl << "####################" << endl;
 		cout << "User not found in the database. No changes made." << endl;
 		cout << "####################" << endl;
 		system("PAUSE");

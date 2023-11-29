@@ -1,5 +1,5 @@
-#ifndef REMOVE_PERSON_H
-#define REMOVE_PERSON_H
+#ifndef EDIT_METHODS_H
+#define EDIT_METHODS_H
 
 #include <iostream>
 #include <string>
@@ -10,5 +10,6 @@
 using namespace std;
 
 void userRemove(WriteDatabase& writeDatabase);
-
+void editFirstName(WriteDatabase& writeDatabase);
+void editLastName(WriteDatabase& writeDatabase);
 #endif
