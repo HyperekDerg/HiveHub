@@ -5,7 +5,7 @@ EditTool::EditTool(WriteDatabase& writeDatabase)
 
 void EditTool::menu() const {
 	cout << "[MAIN|EDIT]" << endl << endl;
-	cout << "Welcome to the Edit tool. Inside this tool, you can remove a user from the database or change values of database records.\n";
+	cout << "Welcome to the Edit tool. Here, you can delete users or update database records.\n";
 	cout << "Before you start, please select which operation you want to do.\n\n";
 
 	cout << "===  Edit Tool  ===" << endl;
@@ -57,7 +57,9 @@ void EditTool::runUserChoice() const {
 			system("CLS");
 			break;
 		case 4:
-			// Call the subroutine for Option 4
+			system("CLS");
+			editInterests(writeDatabase);
+			system("CLS");
 			break;
 		case 5:
 			cout << "Going back to the Main Menu." << endl;

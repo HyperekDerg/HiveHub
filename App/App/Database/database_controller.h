@@ -21,6 +21,8 @@ struct UserData
 	vector<string> interests;
 };
 
+void checkOrCreateDatabaseFile(const string& filename);
+
 class WriteDatabase {
 public:
 	WriteDatabase(const string& filename);

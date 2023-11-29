@@ -22,6 +22,7 @@ bool ReadDatabase::findUserByEmail(const string& email) {
 }
 
 UserData ReadDatabase::getUser(const string& email) const {
+	const map<string, UserData>& userMap = writeDatabase_.getUserMap();
 	auto it = userMap.find(email);
 	if (it != userMap.end()) {
 		return it->second;
