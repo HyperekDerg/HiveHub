@@ -6,8 +6,7 @@
 #include <string>
 #include <stdlib.h> 
 #include "Database/database_controller.h"
-#include "Methods/add_person.h"
-#include "Methods/edit_tool.h"
+#include "Methods/methods.h"
 
 using namespace std;
 

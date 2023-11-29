@@ -1,14 +1,17 @@
-#ifndef EDIT_TOOL_H
-#define EDIT_TOOL_H
+#ifndef METHODS_H
+#define METHODS_H
 
 #include <iostream>
 #include <vector>
 #include <string>
 #include <sstream>
+#include <stdlib.h>
+#include "Edits_Methods/edit_methods.h"
 #include "../Database/database_controller.h"
-#include "Edits_Methods/remove_person.h"
 
 using namespace std;
+
+void userCreator(WriteDatabase& writeDatabase);
 
 class EditTool
 {

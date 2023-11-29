@@ -1,4 +1,4 @@
-#include "edit_tool.h"
+#include "methods.h"
 
 EditTool::EditTool(WriteDatabase& writeDatabase)
 	: writeDatabase(writeDatabase) {}
@@ -12,19 +12,20 @@ void EditTool::menu() const {
 	cout << "1. Remove user" << endl;
 	cout << "2. Edit First Name" << endl;
 	cout << "3. Edit Last Name" << endl;
-	cout << "4. Go back to the Main Menu" << endl;
+	cout << "4. Manage Interests" << endl;
+	cout << "5. Go back to the Main Menu" << endl;
 }
 
 int EditTool::getUserChoice() const {
 	int choice;
 	while (true) {
-		cout << "Choose an option (1-4): ";
-		if (cin >> choice && choice >= 1 && choice <= 4) {
+		cout << "Choose an option (1-5): ";
+		if (cin >> choice && choice >= 1 && choice <= 5) {
 			cin.ignore(numeric_limits<streamsize>::max(), '\n');
 			break;
 		}
 		else {
-			cout << "Invalid input. Please enter a number between 1 and 4." << endl;
+			cout << "Invalid input. Please enter a number between 1 and 5." << endl;
 			cin.clear();
 			cin.ignore(numeric_limits<streamsize>::max(), '\n');
 		}
@@ -35,7 +36,7 @@ int EditTool::getUserChoice() const {
 void EditTool::runUserChoice() const {
 	int choice = 0;
 	do {
-		if (choice != 4) {
+		if (choice != 5) {
 			menu();
 		}
 		choice = getUserChoice();
@@ -46,16 +47,23 @@ void EditTool::runUserChoice() const {
 			system("CLS");
 			break;
 		case 2:
-			// Call the subroutine for Option 2
+			system("CLS");
+			editFirstName(writeDatabase);
+			system("CLS");
 			break;
 		case 3:
-			// Call the subroutine for Option 3
+			system("CLS");
+			editLastName(writeDatabase);
+			system("CLS");
 			break;
 		case 4:
+			// Call the subroutine for Option 4
+			break;
+		case 5:
 			cout << "Going back to the Main Menu." << endl;
 			break;
 		default:
 			cout << "Invalid choice." << endl;
 		}
-	} while (choice != 4);
+	} while (choice != 5);
 }

@@ -9,7 +9,6 @@
 #include <sstream>
 #include <algorithm>
 #include <cctype>
-#include "line_parser.h"
 
 using namespace std;
 
@@ -29,6 +28,8 @@ public:
 
 	void addUser(const string& email, const string& firstName, const string& lastName, const string& address, const vector<string>& interests);
 	bool removeUser(const string& email);
+	UserData getUser(const string& email) const;
+	bool updateUser(const string& email, const UserData& updatedUserData);
 
 	bool load();
 	bool save();
@@ -51,4 +52,8 @@ private:
 	const WriteDatabase& writeDatabase_;
 };
 
+class LineParser {
+public:
+	static bool parseLine(const string& line, UserData& userData);
+};
 #endif

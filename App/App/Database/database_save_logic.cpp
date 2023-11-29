@@ -29,6 +29,24 @@ bool WriteDatabase::removeUser(const string& email) {
 	return false;
 }
 
+UserData WriteDatabase::getUser(const string& email) const {
+	auto it = userMap.find(email);
+	if (it != userMap.end()) {
+		return it->second;
+	}
+	return UserData{};
+}
+
+bool WriteDatabase::updateUser(const string& email, const UserData& updatedUserData) {
+	auto it = userMap.find(email);
+	if (it != userMap.end()) {
+		userMap[email] = updatedUserData;
+		save();
+		return true;
+	}
+	return false;
+}
+
 bool WriteDatabase::load() {
 	ifstream file(filename_);
 	if (!file.is_open()) {

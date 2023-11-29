@@ -1,4 +1,4 @@
-#include "add_person.h"
+#include "methods.h"
 
 void userCreator(WriteDatabase& writeDatabase) {
     cout << "[MAIN|CREATION]" << endl << endl;
