@@ -15,7 +15,7 @@ void editLastName(WriteDatabase& writeDatabase) {
         string newLastName;
         getline(cin, newLastName);
 
-        UserData userData = writeDatabase.getUser(email);
+        UserData userData = readDatabase.getUser(email);
         userData.lastName = newLastName;
 
         writeDatabase.updateUser(email, userData);

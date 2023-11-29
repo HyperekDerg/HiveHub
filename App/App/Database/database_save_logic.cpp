@@ -29,14 +29,6 @@ bool WriteDatabase::removeUser(const string& email) {
 	return false;
 }
 
-UserData WriteDatabase::getUser(const string& email) const {
-	auto it = userMap.find(email);
-	if (it != userMap.end()) {
-		return it->second;
-	}
-	return UserData{};
-}
-
 bool WriteDatabase::updateUser(const string& email, const UserData& updatedUserData) {
 	auto it = userMap.find(email);
 	if (it != userMap.end()) {
