@@ -1,9 +1,10 @@
-﻿// main.cpp: Defines the entry point for the application.
-
-#include "main.h"
+﻿#include "main.h"
 
 int main() {
-    WriteDatabase database("database.txt");
+    const string databaseFileName = "database.txt";
+    checkOrCreateDatabaseFile(databaseFileName);
+
+    WriteDatabase database(databaseFileName);
 
     if (database.load()) {
         UserInterface userInterface("Main Menu", database);

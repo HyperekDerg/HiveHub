@@ -8,15 +8,24 @@ void userCreator(WriteDatabase& writeDatabase) {
     string email, firstName, lastName, address, interestInput;
     vector<string> interests;
 
-    cout << "Enter Email: ";
+    cout << "Enter Email (or type 'abort' to cancel): ";
     cin >> email;
+
+    if (email == "abort") {
+        cout << endl << "####################" << endl;
+        cout << "Operation aborted by user." << endl;
+        cout << "####################" << endl;
+        system("PAUSE");
+        return;
+    }
     cin.ignore();
+
     cout << "Enter First Name: ";
-    cin >> firstName;
-    cin.ignore();
+    getline(cin, firstName);
+
     cout << "Enter Last Name: ";
-    cin >> lastName;
-    cin.ignore();
+    getline(cin, lastName);
+
     cout << "Enter Address: ";
     getline(cin, address);
 
@@ -29,19 +38,18 @@ void userCreator(WriteDatabase& writeDatabase) {
         interests.push_back(interest);
     }
 
-
     ReadDatabase readDatabase(writeDatabase);
     if (readDatabase.findUserByEmail(email)) {
         cout << endl << "####################" << endl;
         cout << "ERROR:. This email already exists in the database! Please provide an email that doesn't exist." << endl;
         cout << "####################" << endl;
-        system ("PAUSE");
+        system("PAUSE");
     }
     else {
         writeDatabase.addUser(email, firstName, lastName, address, interests);
         cout << endl << "####################" << endl;
         cout << "SUCCESS:. User added to the database successfully." << endl;
         cout << "####################" << endl;
-        system ("PAUSE");
+        system("PAUSE");
     }
 }
