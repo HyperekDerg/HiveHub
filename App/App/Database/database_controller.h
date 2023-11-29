@@ -28,7 +28,6 @@ public:
 
 	void addUser(const string& email, const string& firstName, const string& lastName, const string& address, const vector<string>& interests);
 	bool removeUser(const string& email);
-	UserData getUser(const string& email) const;
 	bool updateUser(const string& email, const UserData& updatedUserData);
 
 	bool load();
@@ -45,11 +44,15 @@ private:
 class ReadDatabase {
 public:
 	ReadDatabase(const WriteDatabase& writeDatabase);
+
+	UserData getUser(const string& email) const;
 	void displayUser(const UserData& userData);
+
 	bool findUserByEmail(const string& email);
 	bool findUsersByInterests(const vector<string>& interests);
 private:
 	const WriteDatabase& writeDatabase_;
+	map<string, UserData> userMap;
 };
 
 class LineParser {

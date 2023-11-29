@@ -21,6 +21,14 @@ bool ReadDatabase::findUserByEmail(const string& email) {
 	return it != userMap.end();
 }
 
+UserData ReadDatabase::getUser(const string& email) const {
+	auto it = userMap.find(email);
+	if (it != userMap.end()) {
+		return it->second;
+	}
+	return UserData{};
+}
+
 bool ReadDatabase::findUsersByInterests(const vector<string>& interests) {
 	const map<string, UserData>& userMap = writeDatabase_.getUserMap();
 	bool found = false;
