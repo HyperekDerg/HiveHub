@@ -15,11 +15,11 @@ void editLastName(WriteDatabase& writeDatabase) {
 		cout << "Current Last Name: " << userData.lastName << endl;
 
 		cout << "Enter the new Last Name (or press Enter to keep existing): ";
-		string newFirstName;
-		getline(cin, newFirstName);
+		string newLastName;
+		getline(cin, newLastName);
 
-		if (!newFirstName.empty()) {
-			userData.firstName = newFirstName;
+		if (!newLastName.empty()) {
+			userData.lastName = newLastName;
 			writeDatabase.updateUser(email, userData);
 			cout << endl << "####################" << endl;
 			cout << "Last Name updated successfully." << endl;

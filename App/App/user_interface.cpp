@@ -34,9 +34,13 @@ void UserInterface::runUserChoice() const {
 		system("CLS");
 		break;
 	}
-	case 3:
-		// Call the subroutine for Option 3
-		break;
+	case 3: {
+		system("CLS");
+		DisplayTool displayTool(writeDatabase);
+		displayTool.runUserChoice();
+		system("CLS");
+		break; 
+	}
 	case 4:
 		cout << "Exiting the program." << endl;
 		exit(0); // Exit the program
