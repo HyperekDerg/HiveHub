@@ -7,6 +7,7 @@
 #include <sstream>
 #include <stdlib.h>
 #include "Edits_Methods/edit_methods.h"
+#include "Display_Methods/display_methods.h"
 #include "../Database/database_controller.h"
 
 using namespace std;
@@ -17,6 +18,18 @@ class EditTool
 {
 public:
 	EditTool(WriteDatabase& writeDatabase);
+	void menu() const;
+	int getUserChoice() const;
+	void runUserChoice() const;
+private:
+	WriteDatabase& writeDatabase;
+};
+
+
+class DisplayTool
+{
+public:
+	DisplayTool(WriteDatabase& writeDatabase);
 	void menu() const;
 	int getUserChoice() const;
 	void runUserChoice() const;
