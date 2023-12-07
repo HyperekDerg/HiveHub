@@ -6,9 +6,16 @@ void userRemove(WriteDatabase& writeDatabase) {
 
 	string email;
 
-	cout << "Enter Email: ";
-	cin >> email;
-	cin.ignore();
+	cout << "Enter Email(or type 'abort' to cancel) : ";
+	getline(cin, email);
+
+	if (email == "abort") {
+		cout << endl << "####################" << endl;
+		cout << "Operation aborted by user." << endl;
+		cout << "####################" << endl;
+		system("PAUSE");
+		return;
+	}
 
 	ReadDatabase readDatabase(writeDatabase);
 	if (readDatabase.findUserByEmail(email)) {
