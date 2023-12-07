@@ -5,8 +5,16 @@ void editInterests(WriteDatabase& writeDatabase) {
 	cout << "To edit the interests of a user in the database, please provide the user's email" << endl << endl;
 
 	string email;
-	cout << "Enter Email: ";
+	cout << "Enter Email (or type 'abort' to cancel) : ";
 	getline(cin, email);
+
+	if (email == "abort") {
+		cout << endl << "####################" << endl;
+		cout << "Operation aborted by user." << endl;
+		cout << "####################" << endl;
+		system("PAUSE");
+		return;
+	}
 
 	ReadDatabase readDatabase(writeDatabase);
 	if (readDatabase.findUserByEmail(email)) {
