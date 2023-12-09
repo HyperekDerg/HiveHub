@@ -11,5 +11,5 @@
 using namespace std;
 
 void displayByEmail(WriteDatabase& writeDatabase);
-
+void displayByInterests(WriteDatabase& writeDatabase);
 #endif

@@ -21,8 +21,6 @@ struct UserData
 	vector<string> interests;
 };
 
-void checkOrCreateDatabaseFile(const string& filename);
-
 class WriteDatabase {
 public:
 	WriteDatabase(const string& filename);
@@ -48,10 +46,10 @@ public:
 	ReadDatabase(const WriteDatabase& writeDatabase);
 
 	UserData getUser(const string& email) const;
-	void displayUser(const UserData& userData);
+	void displayUser(const UserData& userData, ostream& output);
 
 	bool findUserByEmail(const string& email);
-	bool findUsersByInterests(const vector<string>& interests);
+	bool findUsersByInterests(const vector<string>& interests, ostream& output);
 private:
 	const WriteDatabase& writeDatabase_;
 	map<string, UserData> userMap;

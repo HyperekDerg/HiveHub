@@ -46,8 +46,12 @@ void DisplayTool::runUserChoice() const {
 			system("CLS");
 			break;
 		case 2:
-			// Option 2
+		{
+			system("CLS");
+			displayByInterests(writeDatabase);
+			system("CLS");
 			break;
+		}
 		case 3:
 			// Option 3
 			break;
