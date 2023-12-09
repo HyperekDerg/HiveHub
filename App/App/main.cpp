@@ -1,24 +1,35 @@
 ﻿#include "main.h"
 
 int main() {
-    const string databaseFileName = "database.txt";
-    checkOrCreateDatabaseFile(databaseFileName);
+	const string configFileName = "config.ini";
+	ConfigManager configManager(configFileName);
 
-    WriteDatabase database(databaseFileName);
+	if (!filesystem::exists(configFileName)) {
+		configManager.createConfig();
+	}
+	else {
+		configManager.readConfig();
+	}
 
-    if (database.load()) {
-        UserInterface userInterface("Main Menu", database);
+	const string databaseFileName = configManager.getValue("database_file");
+	checkOrCreateDatabaseFile(databaseFileName);
+	WriteDatabase database(databaseFileName);
 
-        bool exitProgram = false;
+	if (database.load()) {
+		const string selectedColor = configManager.getValue("selected_colour");
+		setConsoleColor(selectedColor);
 
-        while (!exitProgram) {
-            userInterface.display();
-            userInterface.runUserChoice();
-        }
-    }
-    else {
-        cout << "Failed to load the database." << endl;
-    }
+		UserInterface userInterface("Main Menu", database);
 
-    return 0;
+		bool exitProgram = false;
+
+		while (!exitProgram) {
+			userInterface.display();
+			userInterface.runUserChoice();
+		}
+	}
+	else {
+		cout << "Failed to load the database." << endl;
+	}
+	return 0;
 }
