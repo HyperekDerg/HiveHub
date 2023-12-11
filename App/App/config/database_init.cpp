@@ -10,7 +10,7 @@ void checkOrCreateDatabaseFile(const string& filename) {
 		cin >> response;
 
 		if (response == 'y' || response == 'Y') {
-			ofstream newFile(filename);
+			ofstream newFile(filename+".txt");
 			if (!newFile.is_open()) {
 				cerr << "Error creating the database file. Exiting the application." << endl;
 				exit(EXIT_FAILURE);
