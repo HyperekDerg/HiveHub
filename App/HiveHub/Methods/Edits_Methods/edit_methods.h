@@ -1,12 +1,10 @@
 #ifndef EDIT_METHODS_H
 #define EDIT_METHODS_H
 
-#include <iostream>
-#include <string>
-#include <sstream>
-#include <stdlib.h>
-#include <vector>
+#include "../../common_includes.h"
+
 #include "../../Database/database_controller.h"
+#include "../methods.h"
 
 using namespace std;
 

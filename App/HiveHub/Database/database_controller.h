@@ -1,14 +1,7 @@
 #ifndef DATABASE_CONTROLLER_H
 #define DATABASE_CONTROLLER_H
 
-#include <iostream>
-#include <string>
-#include <vector>
-#include <map>
-#include <fstream>
-#include <sstream>
-#include <algorithm>
-#include <cctype>
+#include "../common_includes.h"
 
 using namespace std;
 

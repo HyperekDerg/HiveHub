@@ -14,7 +14,7 @@ void userCreator(WriteDatabase& writeDatabase) {
 	if (email == "abort") {
 		cout << endl << "####################" << endl;
 		cout << "Operation aborted by user." << endl;
-		cout << "####################" << endl;
+		cout << "####################" << endl << endl;
 		system("PAUSE");
 		return;
 	}
@@ -38,18 +38,20 @@ void userCreator(WriteDatabase& writeDatabase) {
 		interests.push_back(interest);
 	}
 
+	toLowerCase(email);
+
 	ReadDatabase readDatabase(writeDatabase);
 	if (readDatabase.findUserByEmail(email)) {
 		cout << endl << "####################" << endl;
 		cout << "ERROR:. This email already exists in the database! Please provide an email that doesn't exist." << endl;
-		cout << "####################" << endl;
+		cout << "####################" << endl << endl;
 		system("PAUSE");
 	}
 	else {
 		writeDatabase.addUser(email, firstName, lastName, address, interests);
 		cout << endl << "####################" << endl;
 		cout << "SUCCESS:. User added to the database successfully." << endl;
-		cout << "####################" << endl;
+		cout << "####################" << endl << endl;
 		system("PAUSE");
 	}
 }

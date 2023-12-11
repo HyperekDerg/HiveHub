@@ -1,12 +1,11 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
-#include <iostream>
-#include <fstream>
-#include <stdlib.h>
-#include <string>
-#include <map>
+#include "../common_includes.h"
+
 #include "console_utils.h"
+#include "../Methods/methods.h"
+#include "database_controller.h"
 
 using namespace std;
 

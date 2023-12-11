@@ -9,7 +9,7 @@ void UserInterface::display() const {
 	cout << "1. Add New Person" << endl;
 	cout << "2. Edit Data" << endl;
 	cout << "3. Display/Group People" << endl;
-	cout << "4. End Task [EXIT]" << endl;
+	cout << "4. End Task [EXIT]" << endl << endl;
 }
 
 int UserInterface::getUserChoice() const {
@@ -39,10 +39,12 @@ void UserInterface::runUserChoice() const {
 		DisplayTool displayTool(writeDatabase);
 		displayTool.runUserChoice();
 		system("CLS");
-		break; 
+		break;
 	}
 	case 4:
+		cout << endl << "####################" << endl;
 		cout << "Exiting the program." << endl;
+		cout << "####################" << endl << endl;
 		exit(0); // Exit the program
 	default:
 		system("CLS");

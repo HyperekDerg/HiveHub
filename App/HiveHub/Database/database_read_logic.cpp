@@ -34,11 +34,12 @@ bool ReadDatabase::findUsersByInterests(const vector<string>& interests, ostream
 	const map<string, UserData>& userMap = writeDatabase_.getUserMap();
 	bool found = false;
 	int userCount = 0;
-
+	output << "####################" << endl;
 	output << "Interests provided: ";
 	for (const auto& interest : interests) {
 		output << interest << ", ";
 	}
+	output << endl << "####################" << endl;
 	output << endl;
 
 	for (const auto& pair : userMap) {
@@ -69,10 +70,8 @@ bool ReadDatabase::findUsersByInterests(const vector<string>& interests, ostream
 	}
 
 	if (found) {
+		output << endl << "####################" << endl;
 		output << "Total users found with the specified interests: " << userCount << endl;
-	}
-	else {
-		output << "No users found with the specified interests." << endl;
 	}
 
 	return found;

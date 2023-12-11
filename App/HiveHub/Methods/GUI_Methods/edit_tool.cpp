@@ -1,4 +1,4 @@
-#include "methods.h"
+#include "user_interface.h"
 
 EditTool::EditTool(WriteDatabase& writeDatabase)
 	: writeDatabase(writeDatabase) {}
@@ -13,7 +13,7 @@ void EditTool::menu() const {
 	cout << "2. Edit First Name" << endl;
 	cout << "3. Edit Last Name" << endl;
 	cout << "4. Manage Interests" << endl;
-	cout << "5. Go back to the Main Menu" << endl;
+	cout << "5. Go back to the Main Menu" << endl << endl;
 }
 
 int EditTool::getUserChoice() const {
