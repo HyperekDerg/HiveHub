@@ -1,4 +1,4 @@
-#include "methods.h"
+#include "user_interface.h"
 
 DisplayTool::DisplayTool(WriteDatabase& writeDatabase)
 	: writeDatabase(writeDatabase) {}
@@ -12,7 +12,7 @@ void DisplayTool::menu() const {
 	cout << "1. Display user by email" << endl;
 	cout << "2. Display users by interests" << endl;
 	cout << "3. Display everyone" << endl;
-	cout << "4. Go back to the Main Menu" << endl;
+	cout << "4. Go back to the Main Menu" << endl << endl;
 }
 
 int DisplayTool::getUserChoice() const {
@@ -41,10 +41,12 @@ void DisplayTool::runUserChoice() const {
 		choice = getUserChoice();
 		switch (choice) {
 		case 1:
+		{
 			system("CLS");
 			displayByEmail(writeDatabase);
 			system("CLS");
 			break;
+		}
 		case 2:
 		{
 			system("CLS");
@@ -53,8 +55,13 @@ void DisplayTool::runUserChoice() const {
 			break;
 		}
 		case 3:
-			// Option 3
+		{
+			system("CLS");
+			displayEveryone(writeDatabase);
+			system("CLS");
 			break;
+		}
+		break;
 		case 4:
 			cout << "Going back to the Main Menu." << endl;
 			break;

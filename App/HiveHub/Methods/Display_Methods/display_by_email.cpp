@@ -12,10 +12,12 @@ void displayByEmail(WriteDatabase& writeDatabase) {
 	if (email == "abort") {
 		cout << endl << "####################" << endl;
 		cout << "Operation aborted by user." << endl;
-		cout << "####################" << endl;
+		cout << "####################" << endl << endl;
 		system("PAUSE");
 		return;
 	}
+
+	toLowerCase(email);
 
 	ReadDatabase readDatabase(writeDatabase);
 	if (readDatabase.findUserByEmail(email)) {
@@ -36,7 +38,7 @@ void displayByEmail(WriteDatabase& writeDatabase) {
 	else {
 		cout << endl << "####################" << endl;
 		cout << "User not found in the database. No changes made." << endl;
-		cout << "####################" << endl;
+		cout << "####################" << endl << endl;
 		system("PAUSE");
 	}
 }

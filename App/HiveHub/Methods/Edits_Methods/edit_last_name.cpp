@@ -12,10 +12,12 @@ void editLastName(WriteDatabase& writeDatabase) {
 	if (email == "abort") {
 		cout << endl << "####################" << endl;
 		cout << "Operation aborted by user." << endl;
-		cout << "####################" << endl;
+		cout << "####################" << endl << endl;
 		system("PAUSE");
 		return;
 	}
+
+	toLowerCase(email);
 
 	ReadDatabase readDatabase(writeDatabase);
 	if (readDatabase.findUserByEmail(email)) {
@@ -32,12 +34,12 @@ void editLastName(WriteDatabase& writeDatabase) {
 			writeDatabase.updateUser(email, userData);
 			cout << endl << "####################" << endl;
 			cout << "Last Name updated successfully." << endl;
-			cout << "####################" << endl;
+			cout << "####################" << endl << endl;
 		}
 		else {
 			cout << endl << "####################" << endl;
 			cout << "No changes made. Keeping existing Last Name." << endl;
-			cout << "####################" << endl;
+			cout << "####################" << endl << endl;
 		}
 
 		system("PAUSE");
@@ -45,7 +47,7 @@ void editLastName(WriteDatabase& writeDatabase) {
 	else {
 		cout << endl << "####################" << endl;
 		cout << "User not found in the database. No changes made." << endl;
-		cout << "####################" << endl;
+		cout << "####################" << endl << endl;
 		system("PAUSE");
 	}
 }

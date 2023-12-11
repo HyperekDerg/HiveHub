@@ -12,7 +12,7 @@ void displayByInterests(WriteDatabase& writeDatabase) {
 	if (interestsInput == "abort") {
 		cout << endl << "####################" << endl;
 		cout << "Operation aborted by user." << endl;
-		cout << "####################" << endl;
+		cout << "####################" << endl << endl;
 		system("PAUSE");
 		return;
 	}
@@ -28,15 +28,15 @@ void displayByInterests(WriteDatabase& writeDatabase) {
 
 	ReadDatabase readDatabase(writeDatabase);
 	if (readDatabase.findUsersByInterests(interests, cout)) {
-		cout << endl << "####################" << endl;
+
 		cout << "Users with the specified interests displayed." << endl;
-		cout << "####################" << endl;
+		cout << "####################" << endl << endl;
 		system("PAUSE");
 	}
 	else {
 		cout << endl << "####################" << endl;
 		cout << "No users found with the specified interests." << endl;
-		cout << "####################" << endl;
+		cout << "####################" << endl << endl;
 		system("PAUSE");
 	}
 }

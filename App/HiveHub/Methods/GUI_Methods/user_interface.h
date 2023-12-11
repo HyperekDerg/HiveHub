@@ -1,18 +1,24 @@
-#ifndef METHODS_H
-#define METHODS_H
+#ifndef USER_INTERFACE_H
+#define USER_INTERFACE_H
 
-#include <iostream>
-#include <vector>
-#include <string>
-#include <sstream>
-#include <stdlib.h>
-#include "Edits_Methods/edit_methods.h"
-#include "Display_Methods/display_methods.h"
-#include "../Database/database_controller.h"
+#include "../../common_includes.h"
+
+#include "../../Database/database_controller.h"
+#include "../methods.h"
 
 using namespace std;
 
-void userCreator(WriteDatabase& writeDatabase);
+class UserInterface {
+public:
+	UserInterface(const string& title, WriteDatabase& writeDatabase);
+	void display() const;
+	int getUserChoice() const;
+	void runUserChoice() const;
+
+private:
+	string title;
+	WriteDatabase& writeDatabase;
+};
 
 class EditTool
 {

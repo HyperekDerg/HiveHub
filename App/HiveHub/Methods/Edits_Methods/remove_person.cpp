@@ -12,30 +12,32 @@ void userRemove(WriteDatabase& writeDatabase) {
 	if (email == "abort") {
 		cout << endl << "####################" << endl;
 		cout << "Operation aborted by user." << endl;
-		cout << "####################" << endl;
+		cout << "####################" << endl << endl;
 		system("PAUSE");
 		return;
 	}
+
+	toLowerCase(email);
 
 	ReadDatabase readDatabase(writeDatabase);
 	if (readDatabase.findUserByEmail(email)) {
 		if (writeDatabase.removeUser(email)) {
 			cout << endl << "####################" << endl;
 			cout << "User removed successfully." << endl;
-			cout << "####################" << endl;
+			cout << "####################" << endl << endl;
 			system("PAUSE");
 		}
 		else {
 			cout << endl << "####################" << endl;
 			cout << "Failed to remove user. Unexpected error occurred." << endl;
-			cout << "####################" << endl;
+			cout << "####################" << endl << endl;
 			system("PAUSE");
 		}
 	}
 	else {
 		cout << endl << "####################" << endl;
 		cout << "User not found in the database. No changes made." << endl;
-		cout << "####################" << endl;
+		cout << "####################" << endl << endl;
 		system("PAUSE");
 	}
 }

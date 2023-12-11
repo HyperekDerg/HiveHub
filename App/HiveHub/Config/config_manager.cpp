@@ -59,10 +59,22 @@ void ConfigManager::createConfig() {
 	cout << "####################" << endl;
 
 	cout << endl << "Enter the database file name: ";
-	cin >> configMap_["database_file"];
+	string tempDatabaseFile;
+	cin >> tempDatabaseFile;
+	toUpperCase(tempDatabaseFile);
+	configMap_["database_file"] = tempDatabaseFile + ".txt";
 
 	cout << "Select language [EN/PL]: ";
-	cin >> configMap_["selected_language"];
+	cin >> tempDatabaseFile;
+	toUpperCase(tempDatabaseFile);
+
+	while (tempDatabaseFile != "EN" && tempDatabaseFile != "PL") {
+		cout << "Invalid choice. Please select a valid language (EN/PL): ";
+		cin >> tempDatabaseFile;
+		toUpperCase(tempDatabaseFile);
+	}
+
+	configMap_["selected_language"] = tempDatabaseFile;
 
 	cout << "Select console text color [FROM BELOW]:\n";
 
@@ -81,7 +93,16 @@ void ConfigManager::createConfig() {
 	cout << endl << "####################" << endl;
 
 	cout << "\nYour choice: ";
-	cin >> configMap_["selected_colour"];
+	cin >> tempDatabaseFile;
+	toUpperCase(tempDatabaseFile);
+
+	while (find(begin(colorOptions), end(colorOptions), tempDatabaseFile) == end(colorOptions)) {
+		cout << "Invalid choice. Please select a valid color option: ";
+		cin >> tempDatabaseFile;
+		toUpperCase(tempDatabaseFile);
+	}
+
+	configMap_["selected_colour"] = tempDatabaseFile;
 
 	writeConfig();
 
