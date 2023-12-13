@@ -1,21 +1,21 @@
 #include "user_interface.h"
 
-DisplayTool::DisplayTool(WriteDatabase& writeDatabase)
+UserDisplay::UserDisplay(WriteDatabase& writeDatabase)
 	: writeDatabase(writeDatabase) {}
 
-void DisplayTool::menu() const {
-	cout << "[MAIN|DISPLAY]" << endl << endl;
-	cout << "Welcome to the Display tool. Here, you can check and display records.\n";
+void UserDisplay::menu() const {
+	cout << "[MAIN|USER DISPLAY]" << endl << endl;
+	cout << "Welcome to the User Display tool. Here, you can check and display records.\n";
 	cout << "Before you start, please select which operation you want to do.\n\n";
 
-	cout << "===  Edit Tool  ===" << endl;
+	cout << "===  User Display  ===" << endl;
 	cout << "1. Display user by email" << endl;
 	cout << "2. Display users by interests" << endl;
 	cout << "3. Display everyone" << endl;
 	cout << "4. Go back to the Main Menu" << endl << endl;
 }
 
-int DisplayTool::getUserChoice() const {
+int UserDisplay::getUserChoice() const {
 	int choice;
 	while (true) {
 		cout << "Choose an option (1-4): ";
@@ -32,7 +32,7 @@ int DisplayTool::getUserChoice() const {
 	return choice;
 }
 
-void DisplayTool::runUserChoice() const {
+void UserDisplay::runUserChoice() const {
 	int choice = 0;
 	do {
 		if (choice != 4) {

@@ -1,12 +1,12 @@
-#include "display_methods.h"
+#include "display_features.h"
 
 void displayByEmail(WriteDatabase& writeDatabase) {
 	cout << "[MAIN|DISPLAY|BY EMAIL]" << endl << endl;
-	cout << "To display user data. Provide user email." << endl << endl;
+	cout << "To display user data, please provide the user's email." << endl << endl;
 
 	string email;
 
-	cout << "Enter Email (or type 'abort' to cancel) : ";
+	cout << "Enter Email (or type 'abort' to cancel): ";
 	getline(cin, email);
 
 	if (email == "abort") {
@@ -24,6 +24,7 @@ void displayByEmail(WriteDatabase& writeDatabase) {
 		UserData userData = readDatabase.getUser(email);
 
 		cout << endl << "####################" << endl;
+		cout << "User Information:" << endl;
 		cout << "First Name: " << userData.firstName << endl;
 		cout << "Last Name: " << userData.lastName << endl;
 		cout << "Address: " << userData.address << endl;
@@ -37,7 +38,7 @@ void displayByEmail(WriteDatabase& writeDatabase) {
 	}
 	else {
 		cout << endl << "####################" << endl;
-		cout << "User not found in the database. No changes made." << endl;
+		cout << "User not found in the database. No information to display." << endl;
 		cout << "####################" << endl << endl;
 		system("PAUSE");
 	}

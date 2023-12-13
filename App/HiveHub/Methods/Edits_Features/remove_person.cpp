@@ -1,12 +1,12 @@
 #include "edit_methods.h"
 
 void userRemove(WriteDatabase& writeDatabase) {
-	cout << "[MAIN|EDIT|REMOVE]" << endl << endl;
-	cout << "To remove user data from the database, please provide the user's email" << endl << endl;
+	cout << "[MAIN|EDIT|REMOVE USER]" << endl << endl;
+	cout << "To remove a user from the database, please provide the user's email." << endl << endl;
 
 	string email;
 
-	cout << "Enter Email(or type 'abort' to cancel) : ";
+	cout << "Enter Email (or type 'abort' to cancel): ";
 	getline(cin, email);
 
 	if (email == "abort") {
@@ -23,13 +23,13 @@ void userRemove(WriteDatabase& writeDatabase) {
 	if (readDatabase.findUserByEmail(email)) {
 		if (writeDatabase.removeUser(email)) {
 			cout << endl << "####################" << endl;
-			cout << "User removed successfully." << endl;
+			cout << "User successfully removed from the database." << endl;
 			cout << "####################" << endl << endl;
 			system("PAUSE");
 		}
 		else {
 			cout << endl << "####################" << endl;
-			cout << "Failed to remove user. Unexpected error occurred." << endl;
+			cout << "Failed to remove user. An unexpected error occurred." << endl;
 			cout << "####################" << endl << endl;
 			system("PAUSE");
 		}

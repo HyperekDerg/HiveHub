@@ -3,8 +3,8 @@
 
 #include "../common_includes.h"
 
-#include "Edits_Methods/edit_methods.h"
-#include "Display_Methods/display_methods.h"
+#include "Edits_Features/edit_methods.h"
+#include "User_Display_Features/display_features.h"
 #include "../Database/database_controller.h"
 
 using namespace std;
