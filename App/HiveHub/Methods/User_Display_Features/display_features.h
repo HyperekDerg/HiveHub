@@ -1,5 +1,5 @@
-#ifndef DISPLAY_METHODS_H
-#define DISPLAY_METHODS_H
+#ifndef DISPLAY_FEATURES_H
+#define DISPLAY_FEATURES_H
 
 #include "../../common_includes.h"
 

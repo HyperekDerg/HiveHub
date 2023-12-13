@@ -1,14 +1,14 @@
 #include "user_interface.h"
 
-EditTool::EditTool(WriteDatabase& writeDatabase)
+UserManagement::UserManagement(WriteDatabase& writeDatabase)
 	: writeDatabase(writeDatabase) {}
 
-void EditTool::menu() const {
-	cout << "[MAIN|EDIT]" << endl << endl;
-	cout << "Welcome to the Edit tool. Here, you can delete users or update database records.\n";
+void UserManagement::menu() const {
+	cout << "[MAIN|USER MANAGEMENT]" << endl << endl;
+	cout << "Welcome to the User Management tool. Here, you can delete users or update database records.\n";
 	cout << "Before you start, please select which operation you want to do.\n\n";
 
-	cout << "===  Edit Tool  ===" << endl;
+	cout << "=== User Management ===" << endl;
 	cout << "1. Remove user" << endl;
 	cout << "2. Edit First Name" << endl;
 	cout << "3. Edit Last Name" << endl;
@@ -16,7 +16,7 @@ void EditTool::menu() const {
 	cout << "5. Go back to the Main Menu" << endl << endl;
 }
 
-int EditTool::getUserChoice() const {
+int UserManagement::getUserChoice() const {
 	int choice;
 	while (true) {
 		cout << "Choose an option (1-5): ";
@@ -33,7 +33,7 @@ int EditTool::getUserChoice() const {
 	return choice;
 }
 
-void EditTool::runUserChoice() const {
+void UserManagement::runUserChoice() const {
 	int choice = 0;
 	do {
 		if (choice != 5) {

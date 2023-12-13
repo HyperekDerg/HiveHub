@@ -19,9 +19,13 @@ void checkOrCreateDatabaseFile(const string& filename) {
 			system("PAUSE");
 			system("cls");
 		}
-		else {
+		else if (response == 'n' || response == 'N') {
 			cerr << "Database file not created. Exiting the application." << endl;
 			exit(EXIT_FAILURE);
+		}
+		else {
+			cout << "Invalid choice. Please enter 'Y' or 'N'." << endl;
+			checkOrCreateDatabaseFile(filename);
 		}
 	}
 }

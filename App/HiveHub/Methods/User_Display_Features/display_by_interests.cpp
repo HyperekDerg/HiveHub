@@ -1,12 +1,12 @@
-#include "display_methods.h"
+#include "Display_Features.h"
 
 void displayByInterests(WriteDatabase& writeDatabase) {
 	cout << "[MAIN|DISPLAY|BY INTERESTS]" << endl << endl;
-	cout << "To display user data by interests. Provide interests separated by commas." << endl << endl;
+	cout << "To display user data by interests, provide interests separated by commas." << endl << endl;
 
 	string interestsInput;
 
-	cout << "Enter Interests without space! (or type 'abort' to cancel): ";
+	cout << "Enter Interests without spaces! (or type 'abort' to cancel): ";
 	getline(cin, interestsInput);
 
 	if (interestsInput == "abort") {

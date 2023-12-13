@@ -20,10 +20,10 @@ private:
 	WriteDatabase& writeDatabase;
 };
 
-class EditTool
+class UserManagement
 {
 public:
-	EditTool(WriteDatabase& writeDatabase);
+	UserManagement(WriteDatabase& writeDatabase);
 	void menu() const;
 	int getUserChoice() const;
 	void runUserChoice() const;
@@ -32,10 +32,10 @@ private:
 };
 
 
-class DisplayTool
+class UserDisplay
 {
 public:
-	DisplayTool(WriteDatabase& writeDatabase);
+	UserDisplay(WriteDatabase& writeDatabase);
 	void menu() const;
 	int getUserChoice() const;
 	void runUserChoice() const;

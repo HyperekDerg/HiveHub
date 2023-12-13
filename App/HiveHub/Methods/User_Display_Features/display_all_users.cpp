@@ -1,4 +1,4 @@
-#include "display_methods.h"
+#include "display_features.h"
 
 void displayEveryone(WriteDatabase& writeDatabase) {
 	cout << "[MAIN|DISPLAY|ALL USERS]" << endl << endl;

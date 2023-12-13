@@ -1,12 +1,12 @@
 #include "config.h"
 
-ConfigManager::ConfigManager(const string& filename) : filename_(filename) {}
+ConfigManager::ConfigManager(const string& configFileName) : filename_(configFileName) {}
 
 bool ConfigManager::readConfig() {
 	ifstream configFile(filename_);
 
 	if (!configFile.is_open()) {
-		cerr << "Error opening config file. Exiting the application." << endl;
+		cerr << "Error opening the configuration file. Exiting the application." << endl;
 		exit(EXIT_FAILURE);
 	}
 
@@ -28,17 +28,14 @@ void ConfigManager::writeConfig() {
 	ofstream configFile(filename_);
 
 	if (!configFile.is_open()) {
-		cerr << "Error creating config file. Exiting the application." << endl;
+		cerr << "Error creating the configuration file. Exiting the application." << endl;
 		exit(EXIT_FAILURE);
 	}
 
-	configFile << "## Welcome to HiveHub config file. You can set up here Database file name, language, console colour." << endl;
+	configFile << "## Welcome to HiveHub configuration file. Set up Database file name, language, and console color here." << endl;
 	configFile << endl;
 	configFile << "## Database file name" << endl;
 	configFile << "database_file=" << configMap_["database_file"] << endl;
-	configFile << endl;
-	configFile << "## Selected Language [EN\\PL]" << endl;
-	configFile << "selected_language=" << configMap_["selected_language"] << endl;
 	configFile << endl;
 	configFile << "## Console Text Color [DEFAULT\\RED\\WHITE\\GREEN\\PINK\\YELLOW\\BLUE\\CYAN\\MAGENTA\\GRAY\\BRIGHT_RED\\BRIGHT_GREEN\\BRIGHT_BLUE\\BRIGHT_YELLOW]" << endl;
 	configFile << "selected_colour=" << configMap_["selected_colour"] << endl;
@@ -58,23 +55,14 @@ void ConfigManager::createConfig() {
 	cout << "Creating a new configuration file." << endl;
 	cout << "####################" << endl;
 
-	cout << endl << "Enter the database file name: ";
+	cout << endl << "Enter the database file name (press Enter for default): ";
 	string tempDatabaseFile;
-	cin >> tempDatabaseFile;
+	getline(cin, tempDatabaseFile);
+	if (tempDatabaseFile.empty()) {
+		tempDatabaseFile = "DefaultDatabase";
+	}
 	toUpperCase(tempDatabaseFile);
 	configMap_["database_file"] = tempDatabaseFile + ".txt";
-
-	cout << "Select language [EN/PL]: ";
-	cin >> tempDatabaseFile;
-	toUpperCase(tempDatabaseFile);
-
-	while (tempDatabaseFile != "EN" && tempDatabaseFile != "PL") {
-		cout << "Invalid choice. Please select a valid language (EN/PL): ";
-		cin >> tempDatabaseFile;
-		toUpperCase(tempDatabaseFile);
-	}
-
-	configMap_["selected_language"] = tempDatabaseFile;
 
 	cout << "Select console text color [FROM BELOW]:\n";
 
@@ -108,5 +96,5 @@ void ConfigManager::createConfig() {
 
 	cout << endl << "####################" << endl;
 	cout << "Configuration file created successfully." << endl;
-	cout << endl << "####################" << endl;
+	cout << "####################" << endl;
 }

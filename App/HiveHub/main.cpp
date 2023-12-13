@@ -29,7 +29,7 @@ int main() {
 		}
 	}
 	else {
-		cout << "Failed to load the database." << endl;
+		cout << "Error: Failed to load the database. Exiting the program." << endl;
 	}
 	return 0;
 }
