@@ -1,0 +1,18 @@
+# HiveHub - People Address Management System
+
+HiveHub is a C++ application designed to efficiently collect and manage information about different individuals. The project focuses on user-friendly features such as adding, editing, removing, and filtering people based on various criteria.
+
+## Key Features
+1. **Adding People:** Flexibly add new individuals to the collection.
+2. **Information Editing:** Continuously update data for individuals in the collection.
+3. **Removing People:** Conveniently remove individuals from the collection.
+4. **Filtering and Display:** Display individuals meeting specific criteria, such as interests or email address.
+
+## System Requirements
+- **Language and Tools:** The application is written in C++ using the CMake tool.
+- **Operating System:** Compatibility with Windows 7 and later, as well as Linux systems.
+- **Hardware Requirements:** Minimum 20MB RAM, approximately 60MB disk space.
+
+---
+
+*Note: For full documentation, configuration instructions, and additional information, refer to the "Doc" directory in the repository.*
