@@ -20,16 +20,39 @@ int main() {
 		setConsoleColor(selectedColor);
 
 		UserInterface userInterface("Main Menu", database);
-
 		bool exitProgram = false;
 
 		while (!exitProgram) {
+			system("CLS");
 			userInterface.display();
-			userInterface.runUserChoice();
+			switch (int choice = userInterface.getUserChoice(); choice) {
+			case 1: {
+				userCreator(database);
+				break;
+			}
+			case 2: {
+				UserManagement userManagement(database);
+				userManagement.runUserChoice();
+				break;
+			}
+			case 3: {
+				UserDisplay userDisplay(database);
+				userDisplay.runUserChoice();
+				break;
+			}
+			case 4:
+				displayMessages("exitProgram");
+				exitProgram = true;
+				break;
+			default:
+				displayMessages("invalidChoice");
+				break;
+			}
 		}
 	}
 	else {
-		cout << "Error: Failed to load the database. Exiting the program." << endl;
+		displayMessages("databaseError");
 	}
+
 	return 0;
 }

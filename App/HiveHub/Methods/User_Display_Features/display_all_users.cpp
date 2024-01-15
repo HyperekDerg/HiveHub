@@ -6,9 +6,7 @@ void displayEveryone(WriteDatabase& writeDatabase) {
 	const map<string, UserData>& userMap = writeDatabase.getUserMap();
 
 	if (userMap.empty()) {
-		cout << "####################" << endl;
-		cout << "No users in the database." << endl;
-		cout << "####################" << endl << endl;
+		cout << "####################\nNo users in the database.\n####################" << endl << endl;
 		system("PAUSE");
 		return;
 	}
@@ -36,8 +34,8 @@ void displayEveryone(WriteDatabase& writeDatabase) {
 	}
 
 	if (userCount > 0) {
-		cout << endl << "####################" << endl;
-		cout << "Total users in the database: " << userCount;
+		cout << endl << "####################\nTotal users in the database:" << endl;
+		cout << userCount;
 		cout << endl << "####################" << endl << endl;
 		system("PAUSE");
 	}

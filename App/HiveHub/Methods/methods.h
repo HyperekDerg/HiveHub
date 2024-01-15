@@ -12,6 +12,8 @@ using namespace std;
 void userCreator(WriteDatabase& writeDatabase);
 void toUpperCase(string& str);
 void toLowerCase(string& str);
+string getUserEmailForEdit();
+void displayMessages(const string& str);
 
 
 

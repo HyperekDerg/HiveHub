@@ -4,6 +4,7 @@ UserDisplay::UserDisplay(WriteDatabase& writeDatabase)
 	: writeDatabase(writeDatabase) {}
 
 void UserDisplay::menu() const {
+	system("CLS");
 	cout << "[MAIN|USER DISPLAY]" << endl << endl;
 	cout << "Welcome to the User Display tool. Here, you can check and display records.\n";
 	cout << "Before you start, please select which operation you want to do.\n\n";

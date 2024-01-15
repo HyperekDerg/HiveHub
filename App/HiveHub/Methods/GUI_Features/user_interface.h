@@ -13,7 +13,6 @@ public:
 	UserInterface(const string& title, WriteDatabase& writeDatabase);
 	void display() const;
 	int getUserChoice() const;
-	void runUserChoice() const;
 
 private:
 	string title;
