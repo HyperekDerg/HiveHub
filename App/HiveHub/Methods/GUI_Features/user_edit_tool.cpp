@@ -4,6 +4,7 @@ UserManagement::UserManagement(WriteDatabase& writeDatabase)
 	: writeDatabase(writeDatabase) {}
 
 void UserManagement::menu() const {
+	system("CLS");
 	cout << "[MAIN|USER MANAGEMENT]" << endl << endl;
 	cout << "Welcome to the User Management tool. Here, you can delete users or update database records.\n";
 	cout << "Before you start, please select which operation you want to do.\n\n";

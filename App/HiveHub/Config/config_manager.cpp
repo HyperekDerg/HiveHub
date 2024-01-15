@@ -32,7 +32,7 @@ void ConfigManager::writeConfig() {
 		exit(EXIT_FAILURE);
 	}
 
-	configFile << "## Welcome to HiveHub configuration file. Set up Database file name, language, and console color here." << endl;
+	configFile << "## Welcome to HiveHub configuration file. Set up Database file name, and console color here." << endl;
 	configFile << endl;
 	configFile << "## Database file name" << endl;
 	configFile << "database_file=" << configMap_["database_file"] << endl;

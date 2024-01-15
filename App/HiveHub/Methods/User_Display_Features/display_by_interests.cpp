@@ -1,19 +1,19 @@
 #include "Display_Features.h"
 
-void displayByInterests(WriteDatabase& writeDatabase) {
-	cout << "[MAIN|DISPLAY|BY INTERESTS]" << endl << endl;
-	cout << "To display user data by interests, provide interests separated by commas." << endl << endl;
-
-	string interestsInput;
-
+string getUserInterestsInput() {
 	cout << "Enter Interests without spaces! (or type 'abort' to cancel): ";
+	string interestsInput;
 	getline(cin, interestsInput);
+	return interestsInput;
+}
+
+void displayByInterests(WriteDatabase& writeDatabase) {
+	cout << "[MAIN|DISPLAY|BY INTERESTS]\n\nTo display user data by interests, provide interests separated by commas." << endl << endl;
+
+	string interestsInput = getUserInterestsInput();
 
 	if (interestsInput == "abort") {
-		cout << endl << "####################" << endl;
-		cout << "Operation aborted by user." << endl;
-		cout << "####################" << endl << endl;
-		system("PAUSE");
+		displayMessages("abortByUser");
 		return;
 	}
 
@@ -28,15 +28,11 @@ void displayByInterests(WriteDatabase& writeDatabase) {
 
 	ReadDatabase readDatabase(writeDatabase);
 	if (readDatabase.findUsersByInterests(interests, cout)) {
-
-		cout << "Users with the specified interests displayed." << endl;
-		cout << "####################" << endl << endl;
+		cout << "Users with the specified interests displayed.\n####################" << endl << endl;
 		system("PAUSE");
 	}
 	else {
-		cout << endl << "####################" << endl;
-		cout << "No users found with the specified interests." << endl;
-		cout << "####################" << endl << endl;
+		cout << "####################\nNo users found with the specified interests.\n####################" << endl << endl;
 		system("PAUSE");
 	}
 }
