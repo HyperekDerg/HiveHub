@@ -29,8 +29,7 @@ void editUserFirstName(WriteDatabase& writeDatabase, const string& email) {
 }
 
 void editFirstName(WriteDatabase& writeDatabase) {
-	cout << "[MAIN|EDIT|FIRST_NAME]" << endl << endl;
-	cout << "To edit the first name of a user in the database, please provide the user's email." << endl << endl;
+	cout << "[MAIN|EDIT|FIRST_NAME]\nTo edit the first name of a user in the database, please provide the user's email." << endl << endl;
 
 	string email = getUserEmailForEdit();
 
