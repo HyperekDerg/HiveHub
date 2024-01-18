@@ -4,6 +4,7 @@ UserInterface::UserInterface(const string& title, WriteDatabase& writeDatabase)
 	: title(title), writeDatabase(writeDatabase) {}
 
 void UserInterface::display() const {
+	system("CLS");
 	cout << "[MAIN MENU]" << endl << endl;
 	cout << "=== " << title << " ===" << endl;
 	cout << "1. Add New Person" << endl;

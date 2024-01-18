@@ -16,6 +16,7 @@ public:
 	void writeConfig();
 	string getValue(const string& key);
 	void createConfig();
+	void initConfig();
 
 private:
 	string filename_;

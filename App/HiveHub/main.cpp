@@ -1,29 +1,17 @@
 ﻿#include "main.h"
 
 int main() {
-	const string configFileName = "config.ini";
-	ConfigManager configManager(configFileName);
+	bool exitProgram;
 
-	if (!filesystem::exists(configFileName)) {
-		configManager.createConfig();
-	}
-	else {
-		configManager.readConfig();
-	}
-
-	const string databaseFileName = configManager.getValue("database_file");
-	checkOrCreateDatabaseFile(databaseFileName);
-	WriteDatabase database(databaseFileName);
+	ConfigManager configManager("config.ini");
+	configManager.initConfig();
+	WriteDatabase database(configManager.getValue("database_file"));
 
 	if (database.load()) {
-		const string selectedColor = configManager.getValue("selected_colour");
-		setConsoleColor(selectedColor);
-
+		setParams(configManager.getValue("selected_colour"), exitProgram);
 		UserInterface userInterface("Main Menu", database);
-		bool exitProgram = false;
 
-		while (!exitProgram) {
-			system("CLS");
+		while (exitProgram == false) {
 			userInterface.display();
 			switch (int choice = userInterface.getUserChoice(); choice) {
 			case 1: {

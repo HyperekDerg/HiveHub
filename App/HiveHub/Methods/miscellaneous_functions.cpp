@@ -25,6 +25,7 @@ void displayMessages(const string& str) {
 	}
 	else if (str == "exitProgram") {
 		cout << endl << "#################### \nExiting the program. Goodbye!\n####################" << endl << endl;
+
 	}
 	else if (str == "abortByUser") {
 		cout << endl << "####################\nOperation aborted by user.\n####################" << endl << endl;
@@ -33,4 +34,9 @@ void displayMessages(const string& str) {
 	else {
 		cerr << "Unknown message type." << endl;
 	}
+}
+
+void setParams(const string &selectedColor, bool &exitProgram) {
+	setConsoleColor(selectedColor);
+	exitProgram = false;
 }

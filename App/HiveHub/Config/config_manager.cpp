@@ -98,3 +98,14 @@ void ConfigManager::createConfig() {
 	cout << "Configuration file created successfully." << endl;
 	cout << "####################" << endl;
 }
+
+void ConfigManager::initConfig() {
+	if (!filesystem::exists("config.ini")) {
+		createConfig();
+	}
+	else {
+		readConfig();
+	}
+
+	checkOrCreateDatabaseFile(getValue("database_file"));
+}
