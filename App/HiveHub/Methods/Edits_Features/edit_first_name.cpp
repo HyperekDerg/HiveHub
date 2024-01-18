@@ -14,7 +14,7 @@ void editUserFirstName(WriteDatabase& writeDatabase, const string& email) {
 		if (!newFirstName.empty()) {
 			userData.firstName = newFirstName;
 			writeDatabase.updateUser(email, userData);
-			cout << endl << "####################\First Name updated successfully.\n####################" << endl << endl;
+			cout << endl << "####################\nFirst Name updated successfully.\n####################" << endl << endl;
 		}
 		else {
 			cout << endl << "####################\nNo changes made. Keeping existing Last Name.\n####################" << endl << endl;
