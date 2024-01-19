@@ -27,10 +27,15 @@
 *.lib
 
 # Executables
-*.exe
 *.out
 *.app
 
 # VS files
 .vs
 /App/out/build/
+
+# Ignore all .exe and .pdb files except those in the /Release directory
+*.exe
+*.pdb
+!/Release/*.exe
+!/Release/*.pdb
