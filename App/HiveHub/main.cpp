@@ -13,7 +13,8 @@ int main() {
 
 		while (exitProgram == false) {
 			userInterface.display();
-			switch (int choice = userInterface.getUserChoice(); choice) {
+			int choice = userInterface.getUserChoice();
+			switch (choice) {
 			case 1: {
 				userCreator(database);
 				break;
